@@ -188,7 +188,7 @@ export default function Navbar() {
           >
             <button
               ref={megaTriggerRef}
-              className={`text-sm font-black uppercase tracking-widest text-black flex items-center gap-1 transition-all duration-150 decoration-4 decoration-black focus:outline-none `}
+              className={`text-sm font-black uppercase tracking-widest text-black flex items-center gap-1 transition-all duration-150 focus:outline-none `}
               aria-haspopup="true"
               aria-expanded={megaOpen}
             >
