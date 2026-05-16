@@ -40,7 +40,11 @@ export default function SignupPage() {
   }, [cooldown]);
 
   const validateEmail = (value, validity) => {
-    return value.trim().length > 0 && validity.valid;
+    return (
+      value.trim().length > 0 &&
+      validity.valid &&
+      value.split("@")[1]?.includes(".")
+    );
   };
   const handleRegister = async (e) => {
     e.preventDefault();
