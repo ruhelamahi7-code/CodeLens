@@ -60,7 +60,10 @@ export default function Footer() {
                 <Link
                   key={l.label}
                   to={l.to}
-                  className="text-sm font-black uppercase tracking-widest text-black hover:underline underline-offset-8 decoration-[3px] hover:opacity-60 transition-opacity"
+                  onClick={l.to === "#" ? (e) => e.preventDefault() : undefined}
+                  className={`text-sm font-black uppercase tracking-widest text-black hover:underline underline-offset-8 decoration-[3px] hover:opacity-60 transition-opacity ${
+                    l.to === "#" ? "opacity-50 cursor-not-allowed hover:no-underline" : ""
+                  }`}
                 >
                   {l.label}
                 </Link>

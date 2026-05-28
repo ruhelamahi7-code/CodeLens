@@ -1,11 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Bug, MonitorSmartphone, Zap, AlertTriangle, CheckCircle, FileText, ArrowRight, Code, Terminal, Server, ShieldCheck } from "lucide-react";
 import { useRef, useEffect } from "react";
-
+import { useLocation } from "react-router-dom";
 const BugReportsPage = () => {
+  const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [location.pathname]);
 
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
