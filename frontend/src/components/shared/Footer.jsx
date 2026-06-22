@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ComingSoonModal from "../ui/ComingSoonModal";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const [comingSoon, setComingSoon] = useState(null); // null | "Documentation" | "Changelog"
 
   return (
     <footer className="w-full bg-white border-t-4 border-black flex-shrink-0">
@@ -53,21 +56,28 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-4">
               {[
-                { label: "Documentation", to: "#" },
-                { label: "Changelog", to: "#" },
-                { label: "Bug Reports", to: "/bug-reports" }
-              ].map((l) => (
-                <Link
-                  key={l.label}
-                  to={l.to}
-                  onClick={l.to === "#" ? (e) => e.preventDefault() : undefined}
-                  className={`text-sm font-black uppercase tracking-widest text-black hover:underline underline-offset-8 decoration-[3px] hover:opacity-60 transition-opacity ${
-                    l.to === "#" ? "opacity-50 cursor-not-allowed hover:no-underline" : ""
-                  }`}
-                >
-                  {l.label}
-                </Link>
-              ))}
+  { label: "Documentation", to: "#" },
+  { label: "Changelog", to: "#" },
+  { label: "Bug Reports", to: "/bug-reports" }
+].map((l) =>
+  l.to === "#" ? (
+    <button
+      key={l.label}
+      onClick={() => setComingSoon(l.label)}
+      className="text-sm font-black uppercase tracking-widest text-black hover:underline underline-offset-8 decoration-[3px] hover:opacity-60 transition-opacity text-left"
+    >
+      {l.label}
+    </button>
+  ) : (
+    <Link
+      key={l.label}
+      to={l.to}
+      className="text-sm font-black uppercase tracking-widest text-black hover:underline underline-offset-8 decoration-[3px] hover:opacity-60 transition-opacity"
+    >
+      {l.label}
+    </Link>
+  )
+)}
             </div>
           </div>
 
@@ -237,7 +247,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
+      <ComingSoonModal
+  isOpen={!!comingSoon}
+  onClose={() => setComingSoon(null)}
+  featureName={comingSoon}
+/>
     </footer>
   );
 }
