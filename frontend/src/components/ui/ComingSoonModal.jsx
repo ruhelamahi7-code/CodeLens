@@ -1,13 +1,41 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function ComingSoonModal({ isOpen, onClose, featureName }) {
+  const closeButtonRef = useRef(null);
+  const modalRef = useRef(null);
+
   useEffect(() => {
     if (!isOpen) return;
+
+    // Focus the close button when modal opens
+    closeButtonRef.current?.focus();
 
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         onClose();
+        return;
+      }
+
+      // Focus trap — keep Tab inside modal
+      if (e.key === "Tab" && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     };
 
@@ -24,13 +52,16 @@ export default function ComingSoonModal({ isOpen, onClose, featureName }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="coming-soon-title"
+      aria-describedby="coming-soon-desc"
     >
       <div
+        ref={modalRef}
         className="relative w-full max-w-lg bg-white border-4 border-black shadow-[16px_16px_0_0_rgba(0,0,0,1)] p-8 sm:p-10"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
+          ref={closeButtonRef}
           onClick={onClose}
           aria-label="Close"
           className="absolute top-4 right-4 w-9 h-9 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-150"
@@ -54,7 +85,10 @@ export default function ComingSoonModal({ isOpen, onClose, featureName }) {
         </h2>
 
         {/* Description */}
-        <p className="text-sm font-bold text-black uppercase tracking-wide leading-relaxed mb-8">
+        <p
+          id="coming-soon-desc"
+          className="text-sm font-bold text-black uppercase tracking-wide leading-relaxed mb-8"
+        >
           We're building this out. CodeLens unifies your competitive
           programming journey across GitHub, LeetCode &amp; Codeforces —
           with AI-driven insights, zero noise. Check back soon, or explore

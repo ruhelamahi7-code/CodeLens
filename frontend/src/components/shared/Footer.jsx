@@ -56,11 +56,11 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-4">
               {[
-  { label: "Documentation", to: "#" },
-  { label: "Changelog", to: "#" },
-  { label: "Bug Reports", to: "/bug-reports" }
+  { label: "Documentation", comingSoon: true },
+{ label: "Changelog", comingSoon: true },
+{ label: "Bug Reports", to: "/bug-reports" }
 ].map((l) =>
-  l.to === "#" ? (
+  l.comingSoon ? (
     <button
       key={l.label}
       onClick={() => setComingSoon(l.label)}
