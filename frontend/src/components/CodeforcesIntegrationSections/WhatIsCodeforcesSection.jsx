@@ -1,4 +1,4 @@
-export default function WhatIsCodeforcessSection() {
+export default function WhatIsCodeforcesSection() {
   return (
     <section className="bg-white border-b-[4px] border-black px-6 sm:px-12 lg:px-24 py-20">
       <div className="max-w-6xl mx-auto w-full">

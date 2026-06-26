@@ -1,3 +1,4 @@
+import { X } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="min-h-screen bg-black text-white flex flex-col justify-center px-6 sm:px-12 lg:px-24 py-24 border-b-[4px] border-white">
@@ -9,7 +10,7 @@ export default function HeroSection() {
 
         {/* Title */}
         <h1 className="text-4xl sm:text-6xl lg:text-[5rem] font-black uppercase tracking-tighter leading-none mb-8">
-          Codeforces <span className="text-gray-400">× CodeLens</span>
+          Codeforces <span className="text-gray-400 inline-flex items-center"><X className="inline w-[0.7em] h-[0.7em] mx-1" strokeWidth={3} />CodeLens</span>
         </h1>
 
         {/* Description */}
