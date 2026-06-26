@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { TrendingUp, Flame, Puzzle, Trophy, BarChart2, Zap } from "lucide-react";
 
 export default function GetStartedSection() {
   return (
@@ -58,21 +59,21 @@ export default function GetStartedSection() {
             </div>
           </div>
 
-          {/* Right — feature preview */}
+          {/* Right — feature preview with Lucide icons */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: "📈", label: "Rating History" },
-              { icon: "🔥", label: "Activity Heatmap" },
-              { icon: "🧩", label: "Problem Analytics" },
-              { icon: "🏆", label: "Contest Stats" },
-              { icon: "📊", label: "Submission Breakdown" },
-              { icon: "⚡", label: "Streak Tracking" },
-            ].map(({ icon, label }) => (
+              { icon: TrendingUp, label: "Rating History" },
+              { icon: Flame, label: "Activity Heatmap" },
+              { icon: Puzzle, label: "Problem Analytics" },
+              { icon: Trophy, label: "Contest Stats" },
+              { icon: BarChart2, label: "Submission Breakdown" },
+              { icon: Zap, label: "Streak Tracking" },
+            ].map(({ icon: Icon, label }) => (
               <div
                 key={label}
                 className="border-[3px] border-black p-6 text-center shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
-                <div className="text-3xl mb-3">{icon}</div>
+                <Icon size={28} strokeWidth={2} className="mx-auto mb-3" />
                 <p className="text-xs font-black uppercase tracking-widest">
                   {label}
                 </p>

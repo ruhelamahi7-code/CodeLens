@@ -1,3 +1,5 @@
+import { Lock, Eye, Trash2, Ban } from "lucide-react";
+
 export default function PrivacySection() {
   return (
     <section className="bg-black text-white border-b-[4px] border-white px-6 sm:px-12 lg:px-24 py-20">
@@ -35,31 +37,31 @@ export default function PrivacySection() {
           <div className="flex flex-col gap-4">
             {[
               {
-                icon: "🔒",
+                icon: Lock,
                 title: "No Password Required",
                 desc: "CodeLens never asks for your Codeforces password. Connection is verified through a code you place in your profile.",
               },
               {
-                icon: "👁️",
+                icon: Eye,
                 title: "Public Data Only",
                 desc: "We only read data that is already visible to anyone on Codeforces — your profile, ratings, and submissions.",
               },
               {
-                icon: "🗑️",
+                icon: Trash2,
                 title: "Delete Anytime",
                 desc: "Disconnect your account at any time. Your Codeforces data is removed from CodeLens servers immediately.",
               },
               {
-                icon: "🚫",
+                icon: Ban,
                 title: "No Third-Party Sharing",
                 desc: "Your data is never sold or shared with advertisers, analytics platforms, or any third party.",
               },
-            ].map(({ icon, title, desc }) => (
+            ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
                 className="border-[3px] border-gray-700 p-6 flex gap-4 items-start hover:border-white transition-colors"
               >
-                <span className="text-2xl flex-shrink-0">{icon}</span>
+                <Icon size={24} strokeWidth={2} className="flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-sm font-black uppercase tracking-widest mb-2">
                     {title}
