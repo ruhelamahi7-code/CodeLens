@@ -53,7 +53,7 @@ export default function WhyIntegrationSection() {
                 key={number}
                 className="border-[3px] border-black p-6 flex gap-6 items-start"
               >
-                <span className="text-3xl font-black tracking-tighter text-gray-200 flex-shrink-0">
+                <span className="text-3xl font-black tracking-tighter text-gray-200 shrink-0">
                   {number}
                 </span>
                 <div>

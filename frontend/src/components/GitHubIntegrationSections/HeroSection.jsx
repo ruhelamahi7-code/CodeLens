@@ -42,6 +42,9 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
+        <p className="text-[10px] font-black uppercase tracking-widest text-gray-600 mt-4">
+          Source: GitHub, 2025
+        </p>
       </div>
     </section>
   );

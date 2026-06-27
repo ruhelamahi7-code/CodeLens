@@ -17,7 +17,7 @@ export default function IntegrationWorkflowSection() {
             },
             {
               title: "Scoped Permissions",
-              desc: "CodeLens requests only the minimum permissions needed to read public repository and contribution data — nothing more.",
+              desc: "CodeLens requests only the permissions needed to read public repository and contribution data for this integration.",
             },
             {
               title: "Repository Sync",
@@ -33,7 +33,7 @@ export default function IntegrationWorkflowSection() {
             },
             {
               title: "Disconnect Anytime",
-              desc: "Revoking access from your CodeLens account settings — or directly from GitHub — immediately stops all future syncing.",
+              desc: "Revoking access from your CodeLens account settings — or directly from GitHub — stops future syncing.",
             },
           ].map(({ title, desc }) => (
             <div

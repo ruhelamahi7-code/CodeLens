@@ -30,7 +30,7 @@ export default function GetStartedSection() {
                 "You're redirected back — your data syncs automatically",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4">
-                  <span className="w-8 h-8 border-[3px] border-black flex items-center justify-center font-black text-sm flex-shrink-0">
+                  <span className="w-8 h-8 border-[3px] border-black flex items-center justify-center font-black text-sm shrink-0">
                     {i + 1}
                   </span>
                   <p className="text-xs font-bold uppercase tracking-widest text-gray-600 leading-relaxed pt-1">

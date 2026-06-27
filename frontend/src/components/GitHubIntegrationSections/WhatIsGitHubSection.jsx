@@ -100,7 +100,7 @@ export default function WhatIsGitHubSection() {
                   },
                 ].map(({ title, desc }) => (
                   <div key={title} className="flex gap-4 items-start">
-                    <span className="w-2 h-2 bg-black flex-shrink-0 mt-2" />
+                    <span className="w-2 h-2 bg-black shrink-0 mt-2" />
                     <div>
                       <h4 className="text-xs font-black uppercase tracking-widest mb-1">
                         {title}
@@ -137,7 +137,7 @@ export default function WhatIsGitHubSection() {
                   },
                 ].map(({ title, desc }) => (
                   <div key={title} className="flex gap-4 items-start">
-                    <span className="w-2 h-2 bg-black flex-shrink-0 mt-2" />
+                    <span className="w-2 h-2 bg-black shrink-0 mt-2" />
                     <div>
                       <h4 className="text-xs font-black uppercase tracking-widest mb-1">
                         {title}

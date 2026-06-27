@@ -22,8 +22,9 @@ export default function PrivacySection() {
             <p className="text-sm font-bold uppercase tracking-widest text-gray-400 leading-relaxed mb-6">
               You can revoke access at any time, either from your CodeLens
               account settings or directly from your GitHub account's
-              authorized apps. Once revoked, we stop syncing and delete your
-              cached GitHub data from our servers.
+              authorized apps. Once revoked, CodeLens stops future syncing,
+              and cached GitHub data is deleted according to our
+              data-retention policy.
             </p>
             <p className="text-sm font-bold uppercase tracking-widest text-gray-400 leading-relaxed">
               We do not sell, share, or monetise your data in any way. CodeLens
@@ -42,24 +43,24 @@ export default function PrivacySection() {
               {
                 icon: Eye,
                 title: "Scoped Access Only",
-                desc: "We request only the minimum permissions needed to read repository and contribution data — nothing more.",
+                desc: "We request only the permissions needed to read repository and contribution data for this integration.",
               },
               {
                 icon: Trash2,
                 title: "Delete Anytime",
-                desc: "Disconnect your account at any time. Your GitHub data is removed from CodeLens servers immediately.",
+                desc: "Disconnect your account at any time, and CodeLens stops future syncing. Cached GitHub data is deleted according to our data-retention policy.",
               },
               {
                 icon: Ban,
                 title: "No Third-Party Sharing",
-                desc: "Your data is never sold or shared with advertisers, analytics platforms, or any third party.",
+                desc: "Your data is never sold, and is only shared as described in our Privacy Policy.",
               },
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
                 className="border-[3px] border-gray-700 p-6 flex gap-4 items-start hover:border-white transition-colors"
               >
-                <Icon size={24} strokeWidth={2} className="flex-shrink-0 mt-1" />
+                <Icon size={24} strokeWidth={2} className="shrink-0 mt-1" />
                 <div>
                   <h3 className="text-sm font-black uppercase tracking-widest mb-2">
                     {title}

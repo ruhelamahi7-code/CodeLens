@@ -47,6 +47,9 @@ export default function OpenSourceSection() {
               </div>
             ))}
           </div>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-600 mt-4 col-span-2">
+            Source: GitHub, 2025
+          </p>
         </div>
       </div>
     </section>
